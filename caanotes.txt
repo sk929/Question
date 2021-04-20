@@ -1,0 +1,2289 @@
+CAA Notes:
+Date:6 March 2019
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+What is CAA?
+CAA stands for Component Application Architecture.
+
+What CAA is not?
+CAA is not: a programming language,
+	    not an operating system,
+	    not a database,
+	    not an application.
+
+Who provides CAA?
+CAA is development by Dassault Systemes.
+
+What is Fullform of DS?
+DS stands for Dassault Systemes.
+
+What is Dassault Systemes?
+Dassault Systemes is a company headquartered in France.
+They make software for Engineering domain.
+
+What are the different products from DS?
+CATIA,
+ENOVIA,
+DELMIA,
+etc.
+
+What are the different brands of DS?
+CATIA,
+ENOVIA,
+DELMIA,
+SIMULIA,
+GEOVIA,
+BIOVIA,
+Spatial,
+EXALEAD
+
+What is a Trigram?
+Trigram is a 3-letter code.
+e.g-CATIA has a trigram CAT.
+
+Who gives the trigram?
+DS-Dassault Systemes gives the trigrams.
+
+What are Trigrams associated with?
+Trigrams are given to brands,products,software or tools,even to human beings.
+
+Can you give an example for usage of trigram?
+Dassault Systemes provides programming APIs.
+As part of API it has a C++ Class by the name CATMathPoint.
+So the trigram CAT is used as a prefix in naming the class.
+
+During the training will use some trigrams?
+Yes.We will use TST as a trigram/prefix.
+
+Can the trigrams be 2-letter/4-letter code?
+Yes.
+2-letter code is called as Bigram.
+4-letter code is called as Quadgram.
+still they are called as Trigram.
+
+What are the Trigrams for different brands or products of DS?
+CAT -CATIA
+ENO -ENOVIA
+VPM -ENOVIA
+DEL -DELMIA
+DNB -DELMIA (Deneb Robotics)
+SWX -SolidWorks
+SPA -Spatial
+
+---------------------------------------------------
+Layered Diagram:
+     +----------------------+
+     |      Layer 3         |
+     +----------------------+
+     |      Layer 2	    |
+     +----------------------+
+     |      Layer 1	    |
+     +----------------------+  
+   
+     +----------------------+
+     |     Application	    |
+     +----------------------+
+     |   Operating System   |
+     +----------------------+
+     |      Hardware	    |
+     +----------------------+
+
+     +----------------------+
+     |        CATIA	    |
+     +----------------------+
+     |   Operating System   |
+     +----------------------+
+     |      Hardware	    |
+     +----------------------+
+
+     +----------------------+
+     |       ENOVIA	    |
+     +----------------------+
+     |   Operating System   |
+     +----------------------+
+     |      Hardware	    |
+     +----------------------+
+
+What is CATIA?
+CATIA is a 3D CAD Modelling Application.
+
+What s ENOVIA?
+ENOVIA is a PLM Software.
+
+What is PLM?
+PLM=Product Lifecycle Management.
+
+Acronyms:
+API =Application Programming Interface.
+SDK =Software Development Kit.
+PLM =Product Lifecycle Management.
+CAD =Computer Aided Design.
+CAM =Computer Aided Manufacturing.
+CAE =Computer Aided Engineering.
+IDE =Integrated Development Environment.
+RADE=Rapid Application Development Environment.
+VS  =Visual Studio.
+VPM =Virtual Product Model.
+VPLM=Virtual Product Lifecycle Management.
+DS  =Dassault Systemes.
+CAA=Component Application Architecture.
+
+-----------------------------------------------------
+What is an Application?
+An Application is a software which an end user uses.
+
+
+	O          uses        +---------------+
+	|-     ----------->    |  Application  |
+	/\                     +---------------+
+     End user
+
+
++---------------+    is a      +---------------+
+|  Application  |------------->|    Software   |
++---------------+              +---------------+
+
++---------------+    is a      +---------------+
+| Software      |------------->|    Program    |
++---------------+              +---------------+
+
++---------------+  is a sequence of    +---------------+
+| Program       |--------------------->|  Instructions |
++---------------+                      +---------------+
+
+-------------------------------------------------------------
+What are Monolithic Applications?
+Earlier,i.e-traditionally Applications were single layered.
+such Applications are called monolithic applications.
+-------------------------------------------------------------
+What is component based architecture?
+In a component based architecture,the application is made up of 1 or more components.
+	+--------------------------------------------+
+	|Application                                 |
+	|   +-------------+      +---------------+   |
+	|   | Component 1 |      |  Component 2  |   |
+	|   +-------------+      +---------------+   |
+	|                                            |	
+	+--------------------------------------------+                    
+
+What is the advantage or use of component based architecture?
+Component based architecture helps in building
+	-complex/big applications,
+	-manage the development across teams/peoples,
+	-deploying the application (i.e-only the components which have changed),
+----------------------------------------------------------
+
+Component 1 uses Component 2.
+
+	+-------------+  uses    +---------------+   
+	| Component 1 | ------>  |  Component 2  |   
+	+-------------+          +---------------+   
+
+Usage leads to notion/idea of Dependency.
+So,if Component 1 uses Component 2,we say Component 1 depends on Component 2.
+
+	+-------------+  depends on    +---------------+   
+	| Component 1 | ------------>  |  Component 2  |   
+	+-------------+                +---------------+  
+-----------------------------------------------------------
+
+What is direct dependency?
+If Component 1 uses directly functionality of Component 2.
+we say Component 1 is directly dependent on Component 2.
+
+	+-------------+  direct dependency   +---------------+   
+	| Component 1 | ------------------>  |  Component 2  |   
+	+-------------+                      +---------------+  
+-------------------------------------------------------------
+
+What is indirect dependency?
+If Component 1 uses Component 2 and Component 2 uses Component 3,then we say 
+Component 1 is indirectly dependent on Component 3.
+
+	+-------------+    
+	| Component 1 |--------------+  
+	+-------------+              | 
+	       |                     |                 
+               | direct              |
+               | dependency          |
+               v                     |
+	+-------------+              |  indirect
+	| Component 2 |              | dependency
+	+-------------+              |
+               |                     |
+               | direct              |
+               | dependency          |
+               v                     |
+	+-------------+              |   
+	| Component 3 |<-------------+   
+	+-------------+ 
+-------------------------------------------------------
+what is Cyclic dependency?
+if Component 1 uses Component 2 and Component 2 uses Component 1.
+we say that Component 1 and Component 2 are cyclically dependent on each other.
+               
+	+-------------+  cyclic dependency   +---------------+   
+	| Component 1 | ------------------>  |  Component 2  |   
+	+-------------+ <-----------------   +---------------+
+  
+---------------------------------------------------------------------
+
+What does CAA help us?
+CAA helps us in creating the components.
+CAA helps us defining and using the components.
+
+Is CAA proprietary of DS?
+yes.
+we get CAA only from DS.
+
+What is CAA based on?
+CAA is based on 2 component technologies:
+	a.Microsoft's COM(Component Object Model)
+	b.Object Management Group's(OMG) CORBA(Common Object Request Broker Architecture)
+
+------------------------------------------------------------------------
+What are the different major versions of CATIA?
+
+						3DEXPERIENCE
+					v6
+				v5
+			v4
+		v3
+	v2
+v1
+
+------------------------------->Time Axis(t)
+
+Note:3DEXPERIENCE is based on V6 architecture.
+
+What are we going to study?
+v5 architecture.
+
+What are the projects which we have?
+The projects are based on v5 and v6 and 3DEXPERIENCE platform.
+
+---------------------------------------------------------------------------------
+
+Does DS software needs licenses?
+Yes.
+
+During the training we will use licenses available centrally on a license server.
+	
+	+-------------------------+
+	| 	   uses	          |
+	| License ------> License | 
+	| Server            File  |
+	|                         |
+	+-------------------------+
+
+
+	+-------------+                      +-------------+
+	|             |       uses           |             |
+	|   CATIA  v5 |   --------------->   |   License   |
+	|             |                      |   Server    |
+	+-------------+                      +-------------+
+       /               \                    /               \
+      +-----------------+                  +-----------------+
+
+License file is recieved from DS,it gives the license file based on the contract.
+---------------------------------------------------------------------------------
+what is a nibble?
+4bits.
+e.g-0000
+
+What is an Octet?
+8bits.
+e.g-0000 0010
+
+What is a byte?
+8bits.e.g-0001 0001
+
+---------------------------------------------------------------------------------
+Storage:
+
+What is one bit storage?
+In one bit storage,we can store either a 0 or 1.
+
+	+------+
+	|   0  |
+	+------+
+
+        +------+
+	|   1  |
+	+------+
+
+What is 8-bit storage?
+It can store 8-bit at a time.
+
+	+----+----+----+----+----+----+----+----+
+	|  0 |  0 |  1 |  0 | 0  |  0 | 1  |  0 |
+	+----+----+----+----+----+----+----+----+
+
+--------------------------------------------------------------------------
+What are the different logical operations ?
+	OR operation - OR Gate - Inclusive OR
+	AND operation - AND Gate
+	NOT operation - NOT Gate - Complement Operation
+	XOR operation - XOR Gate - Exclusive OR
+	NOR operation - NOR Gate 
+	NAND operation - NAND Gate
+
+What is the truth table of OR operation ?
+X,Y are inputs and Z is Output.
+	+-----------------+
+	|  X  |  Y  |  Z  |
+	+-----------------+
+	|  0  |  0  |  0  |
+	+-----------------+
+	|  0  |  1  |  1  |
+	+-----------------+
+	|  1  |  0  |  1  |
+	+-----------------+
+	|  1  |  1  |  1  |
+	+-----------------+
+
+What is the truth table of AND operation ?
+X,Y are inputs and Z is Output.
+	+-----------------+
+	|  X  |  Y  |  Z  |
+	+-----------------+
+	|  0  |  0  |  0  |
+	+-----------------+
+	|  0  |  1  |  0  |
+	+-----------------+
+	|  1  |  0  |  0  |
+	+-----------------+
+	|  1  |  1  |  1  |
+	+-----------------+
+
+What is the truth table of XOR operation ?
+X,Y are inputs and Z is Output.
+	+-----------------+
+	|  X  |  Y  |  Z  |
+	+-----------------+
+	|  0  |  0  |  0  |
+	+-----------------+
+	|  0  |  1  |  1  |
+	+-----------------+
+	|  1  |  0  |  1  |
+	+-----------------+
+	|  1  |  1  |  0  |
+	+-----------------+
+
+What is the truth table of NOT operation ?
+X,Y are inputs and Z is Output.
+	+-----------+
+	|  X  |  Z  |  
+	+-----------+
+	|  0  |  1  |  
+	+-----------+
+	|  1  |  0  | 
+	+-----------+
+
+What is the different number systems which are of signnificance to us?
+Binary,
+Octal,
+Decimal,
+Hexadecimal.
+
+Which are the numerals in decimal number system?
+0 1 2 3 4 5 6 7 8 9
+
+Which are the numerals in binary number system?
+0 1
+
+Which are the numerals in octal number system?
+0 1 2 3 4 5 6 7
+
+Which are the numerals in hexadecimal number system?
+0 1 2 3 4 5 6 7 8 9 A B C D E F
+or
+0 1 2 3 4 5 6 7 8 9 a b c d e f 
+
+Write the different numbers in a tabular format?
+
+ Decimal      Binary    Binary with      Octal      Hexadecimal
+                        leading zero's
+Base  10      Base 2     Base 2          Base 8      Base 16
+----------------------------------------------------------------
+  0               0       0000              0             0
+  1               1       0001              1             1
+  2              10       0010              2             2
+  3              11       0011              3             3
+  4             100       0100              4             4 
+  5             101       0101              5             5
+  6             110       0110              6             6
+  7             111       0111              7             7
+  8            1000       1000             10             8
+  9            1001       1001             11             9
+ 10            1010       1010             12           a or A
+ 11            1011       1011             13           b or B
+ 12            1100       1100             14           c or C
+ 13            1101       1101             15           d or D
+ 14            1110       1110             16           e or E
+ 15            1111       1111             17           f or F
+
+What is the notation for writing octal numbers?
+Octal numbers are prefixed with zero(0).
+
+i.e-07 means 7 in decimal.
+    010 means 8 in decimal.
+    011 means 9 in decimal.
+
+How about 08?
+08 is invalid in octal system.8 digit is not used in this system.
+
+What is the notation of writing hexadecimal numbers?
+Hexadecimal numbers are prefixed with 0x or 0X.
+Hexadecimal      Decimal
+0x1              1
+0xa              10
+0XB              11
+
+In the following number,identify the least significant digit(LSB) and most significant digit(MSB)?
+            2 8 9 4 5
+            ^       ^
+            |       |
+           MSB     LSB
+
+What is the MSB ?
+that digit which contributes the maximum to the number.
+
+What is the LSB ?
+that digit which contributes the minimum to the number.
+
+------------------------------------------------------
+1 Bit Addition:
+0 + 0 = 0
+0 + 1 = 1
+1 + 0 = 1
+1 + 1 = 10(carry forward)
+X,Y are inputs.
+C,S are outputs.
+C=Carry   S=Sum
+	+-----------------------+
+	|  X  |  Y  |  C  |  S  |
+	+-----------------------+
+	|  0  |  0  |  0  |  0  |
+	+-----------------------+
+	|  0  |  1  |  0  |  1  |
+	+-----------------------+
+	|  1  |  0  |  0  |  1  |
+	+-----------------------+
+	|  1  |  1  |  1  |  0  |
+	+-----------------------+
+From Logical operation point of view Carry bit is a logical AND operation and Sum bit is an logical XOR operation.
+---------------------------------------------------------------
+Complement:
+
+What is 10's Complement of 4?
+10-4=6.
+6 is 10's complement of 4.
+Alternatively 4+__=10.
+what should we add to 4 to get 10.
+
+What is 10's complement of following numbers?
+1's complement is 9.
+3's complement is 7.
+5's complement is 5. 
+8's complement is 2.
+
+What is 9's complement of 4?
+9-4=5.
+5 is 9's complement of 4.
+Alternatively 4+__=9.
+what should we add to 4 to get 9.
+
+--------------------------------------------------------
+1's complement in binary:
+to find 1's complement we change 0 to 1 and 1 to 0.
+
+what is 1's complement of 0010?1101.
+	0 0 1 0
+	| | | |
+	1 1 0 1
+
+To find 2's complement we add 1 to 1's complement of a number.
+step 1:find one complement
+step 2:add 1. 
+
+what is 2's complement of 0010?
+	0 0 1 0
+	| | | |
+	1 1 0 1  <---1's complement
+      +       1
+        --------
+        1 1 1 0  <---2's complement
+------------------------------------------------------------
+Bit Labelling:
+Every bit is given a unique name/label.
+	0    0    0    0    1    1    1    1    0    0    0    0    1    1    1    1
+        b15  b14  b13  b12  b11  b10  b9   b8   b7   b6   b5   b4   b3   b2   b1   b0
+         ^                                                                          ^
+        MSB                                                                        LSB
+
+Nibble Labelling:
+Every bit is given a unique name/label.
+	0    0    0    0    1    1    1    1    0    0    0    0    1    1    1    1
+        <----- n3 -------><------  n2 -------><------  n1 -------><------  n0 ----->
+               ^                                                          ^
+           Most Significant                                         Least Significant                
+             Nibble                                                     Nibble
+ 
+Byte Labelling:
+Every bit is given a unique name/label.
+	0    0    0    0    1    1    1    1    0    0    0    0    1    1    1    1
+        <----------------B1------------------><------------------B0----------------->
+                         ^                                        ^
+                  Most Significant                         Least Significant                
+                        Byte                                     Byte
+
+-----------------------------------------------------------------
+Record,Field,Delimiter,CSV,Header/Heading
+
+Suppose we want to store the infromation about 3D points then we have x,y,z co-ordinates.
+10,20,30
+20,40,25
+60,20,10
+ 
+row is a record R1--> 10,20,30
+row is a record R2--> 20,40,25
+row is a record R3--> 60,20,10
+
+Column is a field-->
+F1  F2  F3
+10  20  30
+20  40  25
+60  20  10
+
+What is a delimiter?
+In the following example:10,20,30
+we have 10 20 30 are data/values the are separated by comma.(,) is a delimiter.
+
+Delimiter is a separator.
+
+In the example,10;20;30
+(;) is a delimiter.
+
+In the example,10:20:30
+(:) is a delimiter.
+
+10,20,30;20,40,25;60,20,10;
+, separates the field thus called as Field Separator(FS).
+; separates the record thus called as Record Separator(RS).
+
+What is CSV?
+CSV = Comma separated values.
+e.g- 10,20,30
+pune,mumbai,bangalore
+CSV is essentially values(data) which is separated by comma.
+------------------------------------------------------------
+Newline Character:
+in C/C++,represented as '\n'
+
+on windows, newline  is represented as CR+LF.
+on Unix, newline  is represented as LF.
+CR=Carriage Return.
+LF=Line feed.
+---------------------------------------------------
+               Box
+	+---------------+
+	|               |
+	+---------------+
+
+               Box
+	+---------------+
+	|               |
+	|       15 <---------value       
+	|               |
+	+---------------+
+Box has value 15.
+               Box
+	+---------------+
+	|               |
+	|       15 <---------data       
+	|               |
+	+---------------+
+Box has data 15.
+
+               Box
+	+---------------+
+	|               |
+	|       15 <---------number 
+	|               |
+	+---------------+
+Box has number 15.
+
+Box has value 15.
+Box contains value 15.
+Box holds a value 15.
+------------------------------------------
+         Memory Location
+	+---------------+
+	|               |
+	+---------------+
+
+         Memory Location
+	+---------------+
+	|               |
+	|       15 <---------value       
+	|               |
+	+---------------+
+Memory Location has value 15.
+---------------------------------------------
+
+Name         Memory Location
+Identifier
+           +---------------+
+    Binding|               |
+i   ------>|      15 <---------value       
+	   |               |
+	   +---------------+
+
+Name is given to memory location.
+Name is asssociated with memory location.
+Name is bound to a memory location.
+
+What is binding?
+Binding is the act or process of associating a name with memory location.
+
+Name         Memory Location
+Identifier
+           +---------------+
+    Binding|               |
+i   ------>|      15 <---------value       
+	   |               |
+	   +---------------+
+i is bound to memory location which holds value.
+i is not directly associated with value.
+
+---------------------------------------------------
+What is an Alias?
+Alias is a name.
+Alias is an additonal name given to existing thing/object.
+
+Name         Memory Location
+Identifier
+           +---------------+                       i=original
+    Binding|               |                       j=alias of i
+i   ------>|      15 <---------value       
+ri  ------>|               |
+ri1------->|               |
+	   +---------------+
+(alias)
+
+-----------------------------------------------------
+
+Name         Memory Location
+Identifier
+           +---------------+
+    Binding|               |
+i   ------>|      15 <---------value       
+	   |               |
+	   +---------------+
+                 100 <----Memory Address
+Every memory location has an address.
+Memory address is a number.
+
+Can a memory location not have memory address?
+No.Every memory location has an address.
+
+Can a memory location not be referred by name?
+Yes.
+Name is not mandatory.
+-------------------------------------------------------
+	2 + 3
+	
+	2 + 3 => 5        
+
+		+--------------+
+    2---------->|              |
+                |    +(Plus)   |------->5
+    3---------->|   Addition   |
+                |              |
+                +--------------+
+2,3 are input
+5 is output.
+
+2,3 and 5 are values.
+2 and 3 are known as operands.
++ is known as operator.+ is a symbol.+ has name 'Plus'.+ represents Addition operation.
+
+	+---------------+                 +---------------+
+	|   Operator    |-------------->  |  Operation    |	
+	+---------------+                 +---------------+                      
+	              
+	+---------------+                 +------------------------+
+	|   Operator(+) |-------------->  |  Operation Addition    |	
+	+---------------+                 +------------------------+ 
+
+What is binary operator?
+A binary operator is an operator which takes 2 operands.
+
+What is unary operator?
+A unary operator is an operator which takes 1 operand.
+	
+What is ternary operator?
+A ternary operator is an operator which takes 3 operands.
+
+What are the different notations for operators and operands?
+
+	2 + 3 ==>Infix Notation==>operator is in between operands.
+
+	+ 2 3 ==>Prefix Notation==>operator is before the operands.
+
+	2 3 + ==>Postfix Notation==>operator is after the operands.
+
+What is an Expression?
+Expression is a sequence of operators and operands put in a weell-defined order.
+2+3 is an example of an expression.
+
+What is sub-expression?
+it is a expression within a expression.
+e.g-2 + (3 * 4)
+here,3 * 4 is a sub-expression within the expression.
+
+What is arity of an operation?
+In mathematics,the number of operands which an operation takes is taken as arity of operation.
+2 + 3 here + takes 2 operands and hence arity of addition operation is 2.
+sqrt(4) here arity is 1.
+
+2 + 3
+		+--------------+
+    2---------->|              |
+                |       +      |
+    3---------->|              |
+                |              |
+                +--------------+
+
+  +---+		+--------------+
+  | 2 |-------->|              |
+  +---+         |              |
+  +---+		|      +       |
+  | 3 |-------->|              |
+  +---+         |              |
+                +--------------+
+
+What is an expression tree?
+An Expression tree is an tree representation of an expression.
+The nodes of the tree are either operators and operands.
+ 
+		+--------------+
+                |              |
+		|      +       |  Operator
+                |              |
+                +--------------+
+                   ^        ^
+                   |        |
+                 +---+     +---+
+                 | 2 |     | 3 |
+                 +---+     +---+
+               Operand     Operand
+
+-------------------------------------------------------------
+
+What is an Expression Evaluator?
+An Expression Evaluator takes an input as expression and generates a value,with possible side effects.
+                      Side-Effect
+                           ^
+                           |
+               +----------------------+
+Expression---->| Expression Evaluator |----->value
+               +----------------------+
+
+                 O
+          1----> |- ----->1
+                 /\
+             Ramukaka(Expression Evaluator)
+
+                 O
+        2+3----> |- ----->5
+                 /\
+             Ramukaka(Expression Evaluator)
+
+What is the relationship between Expression Evaluator,Expression,Expression tree?
+Expression Evaluator takes a input as Expression and converts it into Expression tree.
+
+then Expression Evaluator evaluates by going through the expression tree.
+
+Expression tree is internal representation of Expression within Expression Evaluator.
+------------------------------------------------------------
+
+A01  int main()
+A02  {
+A03    int i=0;
+A04    i=10;
+A05    i;
+A06    return 0;
+A07  }
+
+State After line A02:
+                 O
+                 |- 
+                 /\
+             Expression Evaluator
+
+
+State After line A03:
+              +-----+
+          i   |  0  |
+              +-----+
+                 O
+     int i=0;    |- 
+                 /\
+             Expression Evaluator
+Side-Effect:Memory for i is reserved.
+i is initialized with value 0.
+
+State After line A04:
+              +-----+
+          i   |  10 |
+              +-----+
+                 O
+        i=10;    |-    i leads to 10
+                 /\
+             Expression Evaluator
+Side-Effect:Memory for i is assigned.
+[
+int i=0;
+i=10;
+(i=10)=20;  //(i=10) this expression returns i thus value again will be modified to 20.
+i=20;
+]
+
+What is difference between initialization and assignment?
+initialization is giving value when object/variable is created.
+assignment is giving value after object/variable is created.
+int i=0;    //initialization
+i=10;       //assignment
+--------------------------------------
+What are the two ways of initializing in c++?
+in C98,
+
+int main()
+{
+  int i=0;    //Initialization
+  return ;
+}
+
+int main()
+{
+  int i(0);   //Initialization
+  return ;
+}	
+
+------------------------------------------
+int main()
+{
+const int i=0; //i is initialized with 0
+i=10;          //const cannot be assigned
+return 0;
+}
+
+----------------------------------------
+int main()
+{
+const int i; //Error constant should be initialized
+return 0;
+}
+ 
+#################################################
+Day 2
+Date:7 March 2019
+
+What is a type?
+"type" signifies the possible values and the behavior.
+
+Is type same as data type?
+Yes.
+
+Who has type?
+values have type and objects have type.
+
+What are some of the inbuilt types in C++?
+int
+float
+double
+etc.
+are inbuilt types.
+
+What is type conversion?
+Type conversion is converting values from one type to another type.
+
+What is type checking?
+In statements involving initialization/assignment ,the compiler ensures that the types on left hand side and right hand side are same.
+
+Who does type checking?
+Type Checking is done by compiler.
+
+What is type casting?
+Type casting is the mechanism of type conversion.
+
+What are the two broad categories of type casting ?
+Implicit casting
+Explicit casting
+
+int main()
+{
+double  d=10;   //implicit casting
+	       //10 is integer
+	       //10 is converted to double by compiler
+double d1=(double )10;   //Exlplicit casting
+return 0;
+}
+
+What is a mechanism for giving a new name to a type?
+using  "typedef"
+typedef unsigned int UINT;
+int main()
+{
+UINT i;
+return 0;
+}
+
+Is typedef a declaration?
+Yes.it introduces a new name which can be used as a type.
+
+How to write typedef declarations?
+step 1:
+write a declaration of a variable without typedef.
+step 2:
+prefix the declaration with typedef.
+step 3:
+Rename the identifier with new typedef identifier.
+
+e.f-
+int main()
+{
+int *pi;
+return 0;
+}
+
+step 1:int *pi;
+step 2:typedef int *pi;
+step 3:typedef int *IntPtr_t;
+
+typedef int *IntPtr_t;
+int main()
+{
+IntPtr_t  pi;
+return 0;
+}
+
+Points to remember:
+1. How to write decarations:
+Type Identifier;
+Type Identifier=Initial_value;
+Type Identifier(Initial_value);
+----------------------------------------------------------------------
+Whatis l-value?
+l-value =Location-value
+
+What is r-value/
+r-value is value which is not a l-value.
+
+What are the value categories in c98?
+	there are 2 value categories:
+	l-value,
+	r-value.
+
+          e.g-int i=0;
+
+	Name                        Memory location
+			+---------+
+	    i----->     |     0   |     value(r-value)
+			+---------+
+			      100       Address
+
+Expression       Valid/Invalid    Value Category   Type    Evaluated Value     Evaluated Value Category
+--------------------------------------------------------------------------------------------------------
+       i             valid            l-value       int           0                    r-value
+      &i             valid            r-value       int*         100                   r-value
+     *(&i)           valid            l-value       int           0                    r-value
+    &(*(&i))         valid            r-value       int*         100                   r-value
+   *(&(*(&i)))       valid            l-value       int           0                    r-value
+	*i           invalid             -           -            -                       -
+       &(&i)         invalid             -           -            -                       -
+
+How are l-values classified further?
+l-values are classified as:
+modifiable l-value
+non-modifiable l-value
+
+int main()
+{
+int i=0;  //modifiable l-value
+const int j=0;//non-modifiable l-value
+return 0;
+}
+
+-------------------------------------------------------
+Reference and Referent:
+
+What is a reference?
+A reference is another name to a memory location.
+
+What is a referent?
+A reference refers to a referent.
+
+int i=0;
+
+		+--------+
+i  ------------>|   0    |
+		+--------+
+ 		    100
+
+int &ri=i;
+		+--------+
+i  ------------>|   0    |     ri=reference     i=referent
+ri ------------>+--------+
+ 		    100
+note:
+address of reference is same as address of referent.
+	&i==&ri
+--------------------------------------------------------
+dir 
+type a.cpp
+help type
+type /?
+where cl.exe
+cl.exe a.cpp
+a.exe
+-------------------
+#include <iostream>
+using namespace std;
+int main()
+{
+int i;
+int &ri=i;
+
+cout<<&i<<endl;
+cout<<&ri<<endl;
+
+return 0;
+}
+-------------------
+#include <iostream>
+using namespace std;
+
+class X
+{
+public:
+void f();
+};
+
+void X::f()
+{
+cout<<"X::f called..."<<endl;
+}
+
+int main()
+{
+X x1;
+x1.f();
+return 0;
+}
+----------------------
+Pointer to member function....
+
+#include <iostream>
+using namespace std;
+
+class X
+{
+public:
+void f();
+};
+
+void X::f()
+{
+cout<<"X::f called..."<<endl;
+}
+
+int main()
+{
+X x1;
+void (X::*fp)()=&X::f;
+(x1.*fp)();
+return 0;
+}
+--------------------
+typedef of Pointer to member function
+
+#include <iostream>
+using namespace std;
+
+class X
+{
+public:
+void f();
+};
+
+typedef void (X::*FPtr_t)();
+
+void X::f()
+{
+cout<<"X::f called..."<<endl;
+}
+
+int main()
+{
+X x1;
+FPtr_t fp=&X::f;
+(x1.*fp)();
+return 0;
+}
+
+----------------------
+
+
+#include <iostream>
+using namespace std;
+
+class X
+{
+public:
+void f();
+};
+
+typedef void (X::*FPtr_t)();
+
+void X::f()
+{
+cout<<"X::f called..."<<endl;
+}
+
+int main()
+{
+X x1;
+X *px1=&x1;
+px1->f();
+FPtr_t fp=&X::f;
+(px1->*fp)();
+return 0;
+}
+
+
+===================================================================
+Date: 12 march 2019
+
+"TSTFirstWS" is a Workspace directory.
+"C:\TSTFirstWS" is a workspace path.
+Workspace=CAA Workspace.
+
+"TSTFirstFW" is a Framework.
+A directory becomes a framework provided it has IdentityCard directory and IdentityCard.h/IdentityCard.xml inside it.
+In IdentityCard.h:
+AddPrereqComponent("System",Public);
+
+What do we specify in IdentityCard.h?
+we specify framework prerequisites.
+
+	+--------------------+
+	|    Framework FW1   |
+	+--------------------+ 
+		   ^
+		   |uses/depends/prerequisite
+		   |
+	+--------------------+
+	|    Framework FW1   |
+	+--------------------+
+
+FW2 uses FW1.
+FW2 depends on FW1.
+FW1 is a prerequisite of FW2.
+
+What is "System"?
+System is a framework.
+"System" is provided by Dassault Systemes.
+
+What is the directory where we install CAA API?
+C:\Program Files\Dassault Systemes\B28
+
+What is the directory where we install CAA RADE tolls?
+C:\DS\B28
+
+Goto CAA API installed directory...check if it has System folder....check for IdentityCard folder.
+B28 is the Workspace provided by DS.
+
+A Workspace can have directories which are not frameworks.
+
+	+---------------------------+
+	|     Framework System      |
+	+---------------------------+ 
+		   ^
+		   |uses/depends/prerequisite
+		   |
+	+---------------------------+
+	|    Framework TSTFirstWS   |
+	+---------------------------+
+
+C:\Program Files\Dassault Systemes\B28  <----DS Workspace
+				     \System  <----DS Framework
+----------------------------------------------------------------------
+C:\TSTFirstWS  <----DS Workspace 
+	\TSTFirstWS  <----DS Framework
+		\IdentityCard
+			IdentityCard.h
+			     AddPrereqComponent("System",Public);
+	
+	+---------------------------+
+	|     Workspace B28         |
+	+---------------------------+ 
+		   ^
+		   |uses/depends/prerequisite
+		   |
+	+---------------------------+
+	|    Workspace TSTFirstWS   |
+	+---------------------------+
+
+
+In Framework Directory,we create the Module directory
+mkdir PublicInterfaces
+mkdir PrivateInterfaces
+mkdir ProtectedInterfaces
+mkdir CNext
+mkdir mod1.m
+
+Note that the module has extension .m
+.m modules will have C/C++ code.
+.mj modules will have Java code.
+.mext modules will have  external/third-party library related C/C++ code
+.mjext modules will have  external/third-party library related Java code
+
+What is Imakefile.mk?
+It is a special file, which contains directives for the mkmk tool.
+
+What is the lcation of Imakefile.mk?
+Every module directory should have Imakefile.mk
+
+Can One Framework have more than 1 Imakefile.mk?
+No the framework directly does not have Imakefile.mk
+A framework have 1 or more modules.
+each module have one Imakefile.mk
+
+What happen if Imakefile.mk is not present in a module?
+when mkmk is run, mkmk will ignore the Module which does not have Imakefile.mk
+
+What are the comment character in Imakefile.mk?
+#
+
+What is the line continuation charater in Imakefile.mk?
+\(backslash) followed immediately by newline charater.
+
+What is BUILT_OBJECT_TYPE?
+BUILT_OBJECT_TYPE is a directive in Imakefile.mk
+
+BUILT_OBJECT_TYPE=LOAD MODULE
+when we specify LOAD MODULE, mkmk will make an executable program from the source code of the module.
+
+BUILT_OBJECT_TYPE=SHARED LIBRARY
+when  we specify SHARED LIBRARY, mkmk will make an DLL/Shared Library/Shared Object from the source code of the module.
+
+BUILT_OBJECT_TYPE=ARCHIVE
+when  we specify ARCHIVE, mkmk will make an Static Library from the source code of the module.
+
+BUILT_OBJECT_TYPE=NONE
+when  we specify ARCHIVE, mkmk will make nothing from the source code of the module.
+
+C:\TSTFirstWS  <----DS Workspace 
+	\TSTFirstWS  <----DS Framework
+		\mod1.m
+			Imakefile.mk
+			     
+
+	+------------------------------------+
+	|   BUILT_OBJECT_TYPE=LOAD MODULE    |
+	|   LINK_WITH=JS0GROUP               |
+	+------------------------------------+
+			|
+			|		    +-----------+
+			+-------------------|   mkmk    |
+					    +-----------+
+						  |
+				+-------------------------------------------+
+			        |					    |
+\src                +--------------------+			      +-------------+
+HelloCAA.cpp  --->  |   C++ Compiler     |----> HelloCAA.obj  ----->  |   Linker    |--->mod1.exe
+                    +--------------------+			      +-------------+
+                    cl.exe /c HelloCAA.cpp    			 link.exe HelloCAA.obj /out mod1.exe
+========================================================
+13 March 2019:
+
+#include<iostream>
+using namespace std;
+
+class CCook
+{
+public:
+void ServeIdli()
+{
+cout<<"ServeIdli Called..."<<endl;
+}
+};
+int main()
+{
+//CCook cook;
+CCook *pcook=new CCook();
+pcook->ServeIdli();
+delete pcook;
+return 0;
+}
+---------------------------------
+#include<iostream>
+using namespace std;
+//what are the common variable names for variables of type HRESULT?
+//rc stands for Return Code
+//res stands for result
+//hres also stands for result
+/*				Component CCook
+			+------------------------------+
+	ISouthIndian	|                              |
+	     o----------+      +-----------------+     |
+			|      |    CCook        |     |
+			|      |  Implementation |     |
+			|      |     Class       |     |
+ 			|      +-----------------+     |
+	IPunjabi	|			       |
+             o----------|                              |
+                        |                              |
+                        +------------------------------+
+
+			    Fig-Component Diagram
+*/
+
+/*
+Class Diagram:
+
+	+------------------------------------------------------+
+	| 			IUnknown		       |
+	|		    (Abstract Class)		       |
+	+------------------------------------------------------+
+                +                                    +
+	       / \                                  / \
+	      +---+                                +---+
+                |                                    |
+		|                                    |
+      +----------------------+            +-----------------------+
+      |   ISouthIndian       |            |      IPunjabi         |
+      |  (Abstract Class)    |            |      (Abstract Class) |
+      +----------------------+            +-----------------------+
+                +                                    +
+	       / \                                  / \
+	      +---+                                +---+
+                |                                    |
+		|                                    |
+	+------------------------------------------------------+
+	| 			CCook    		       |
+	|                    (Concrete Class)		       |
+	+------------------------------------------------------+
+
+*/
+//Success Codes
+#define S_OK 0
+#define S_FALSE 1
+
+//Error Codes
+#define E_FAIL -1
+#define E_NOINTERFACE -2
+
+typedef int HRESULT;
+
+#define FAILED(rc) ((rc)<0)
+#define SUCCEEDED(rc) ((rc)>0)
+typedef unsigned int GUID;
+typedef GUID IID;
+typedef unsigned int UINT;
+
+//.............................
+IID IID_IUnknown=1;
+class IUnknown
+{
+public:
+virtual UINT Release()=0;
+virtual UINT AddRef()=0;
+virtual HRESULT QueryInterface(const IID &irefiid,void **oppv)=0;
+};
+
+//............................
+IID IID_ISouthIndian=2;
+class ISouthIndian:public IUnknown
+{
+public:
+virtual HRESULT ServeIdli()=0;
+};
+
+//..........................
+IID IID_IPunjabi=3;
+class IPunjabi:public IUnknown
+{
+public:
+virtual HRESULT ServeParatha()=0;
+};
+
+
+class CCook:public ISouthIndian,public IPunjabi
+{
+private:
+UINT m_cref;  //Reference count
+public:
+CCook()
+{
+m_cref=0;
+AddRef();
+cout<<"CCook Ctr Called"<<endl;
+}
+
+~CCook()
+{
+cout<<"CCook Dtr Called"<<endl;
+}
+
+UINT AddRef()
+{
+m_cref++;
+return m_cref;
+}
+
+UINT Release()
+{
+m_cref--;
+if(m_cref==0)
+{
+delete this;//Self-Destruct
+}
+return m_cref;
+}
+
+HRESULT QueryInterface(const IID &irefiid,void **oppv)
+{
+HRESULT rc = E_FAIL;
+if(irefiid==IID_ISouthIndian)
+{
+*oppv=(ISouthIndian *)this;
+AddRef();
+rc=S_OK;
+}
+else if(irefiid==IID_IPunjabi)
+{
+*oppv=(IPunjabi *)this;
+AddRef();
+rc=S_OK;
+}
+else
+{
+*oppv = NULL;
+rc = E_NOINTERFACE;
+}
+return rc;
+}
+
+HRESULT ServeIdli()
+{
+HRESULT rc = E_FAIL;
+cout<<"ServeIdli Called..."<<endl;
+rc = S_OK;
+return rc;
+}
+
+HRESULT ServeParatha()
+{
+HRESULT rc = E_FAIL;
+cout<<"ServeParatha Called..."<<endl;
+rc = S_OK;
+return rc;
+}
+};
+
+
+HRESULT CreateCook(ISouthIndian** oppISouthIndian)
+{
+HRESULT rc = E_FAIL;
+*oppISouthIndian = new CCook();
+rc = S_OK;
+return rc;
+}
+
+
+
+//Client
+int main()
+{
+ISouthIndian *pISouthIndian = NULL;
+HRESULT rc=E_FAIL;
+rc = CreateCook(&pISouthIndian);
+if(FAILED(rc)||(NULL==pISouthIndian))
+{
+cout<<"Creation Failed"<<endl;
+return -1;
+}
+rc=pISouthIndian->ServeIdli();
+if(FAILED(rc))
+{
+cout<<"ServeIdli Failed"<<endl;
+return -2;
+}
+
+
+
+//Prepare
+ISouthIndian *pISouthIndian1=NULL;
+//Call
+rc = pISouthIndian->QueryInterface(IID_ISouthIndian,(void **)&pISouthIndian1);
+//check
+if(FAILED(rc)||(NULL==pISouthIndian1))
+{
+cout<<"QueryInterface Failed"<<endl;
+return -3;
+}
+//prepare 
+IPunjabi *pIPunjabi=NULL;
+//call
+rc=pISouthIndian->QueryInterface(IID_IPunjabi,(void **)&pIPunjabi);
+//check
+if(FAILED(rc)||(NULL==pIPunjabi))
+{
+cout<<"QueryInterface Failed"<<endl;
+return -4;
+}
+
+rc=pIPunjabi->ServeParatha();
+if(FAILED(rc))
+{
+cout<<"ServeParatha Failed"<<endl;
+return -2;
+}
+pISouthIndian->Release();
+pISouthIndian = NULL;
+pISouthIndian1->Release();
+pISouthIndian1 = NULL;
+pIPunjabi->Release();
+pIPunjabi = NULL;
+return 0;
+}
+==========================================================
+
+What is an Interface?
+An interface is a set of functions/methods/services exposed by a server component.
+
+Conceptually:
+An interface is a service.
+interface is a contract between client and server/provider.
+
+QueryInterface=Asks for services.
+
+Query=Ask for.
+e.g-
+In CAA,
+
+IID IID_IPoint=1;
+class IPoint:public IUnknown
+{
+public:
+virtual HRESULT SetX(double ix)=0;
+virtual HRESULT SetY(double iy)=0;
+virtual HRESULT GetX(double &ox)=0;
+virtual HRESULT GetY(double &oy)=0;
+};
+
+
+==========================================
+Date:14 March 2019
+
+C:
+  \Program Files
+     \Dassault Systemes
+        \B28
+          \CAADoc
+             \Doc
+               \online
+                  \CAACenV5Default.htm
+
+CAtBaseUnknown
+
+What is CATBaseUnknown ?
+It is a C++ Class.
+It is provided by DS.
+It provides default implementation of QueryInterface,AddRef and Release.
+
+What will we use CATBaseUnknown for?
+It will be used as Base class for our Interface class and Implementation class.
+
+C:\DS\B28\win_b64\code\command\tck_init.bat
+
+CAA Workspace is mapped to visual studio solution file (.sln) 
+CAA Framework will be mapped to a project file (.vcproj)
+CAA Module file will be mapped to a project file(.vcproj)
+
+3 Types of Frameworks:
+1] Test Framework
+2] Education Framework
+3] Development Framework 
+
+TSTHelloFW--->Development-Implementation framework
+TSTHelloFW.tst--->Test Framework
+TSTHelloFW.edu--->Education Framework
+TSTHelloFWInterfaces-Development-Interfaces Framework
+
+Visual studio solution can have active project called as StartUp project.
+
+
+
++-----------------------------------------------------------------+
+List of commands:
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+	tck_init      tck=tool configuration key
+	tck_list
+	tck_profile [profile name]
+	mkGetPreq -p "C:\Program Files\Dassault Systemes\B28"
+	mkmk -a -u -g -showcmd
+	mkrtv or mkCreateRunTimeView
+	mkrun -c mod1.exe
++------------------------------------------------------------------+
+
+
+
+3 Types of Prerequisites:
+1] Workspace Prerequisite - mkGetPreq
+2] Framework Prerequisite - IdentityCard.h or IdentityCard.xml
+3] Module Prerequisite - Imakefile.mk
+
+
+CATString
+CATUnicodeString
+CATBaseUnknown
+
+Macros:
+- CATDeclareInterface
+- CATImplementInterface
+- CATDeclareHandler
+- CATImplementHandler
+
+- Smart Pointers - Interface Smart pointers
+
+- TSTIPoint
+	- TSTIPoint.h
+	- TSTIPoint.cpp
+	- TIE_TSTIPoint.tsrc
+
+Tie Objects are instances of Tie Classes.
+Tie Objects are C++ objects.
+
+Analogy:
+Tie = Waiter
+
+In CAA, there are Tie Macros to be created.These tie macros are used to create Tie classes.
+Tie macros are there in a header file.
+This header file containing Tie macros is generated by Tie source file.
+
+What are .tsrc files?
+They are Tie source files.
+
+Suppose, we have an interface as TSTIPoint then what will be the Tie Source file TIE_TSTIPoint.tsrc
+
+Who creates the TIE source file?
+Software developer programmer creates the Tie source file.
+	-Manually or using a CAA Wizard.
+
+What is the location TIE source file?
+module\src directory where the Interface.cpp file is kept.
+
+What are the contents of tie source file?
+#include"<interface.h>"
+
+Is Tie a class?
+Yes.There is a tie class and tie object.	
+
+		+-----------------------------------------------------+
+		|                 IUnknown-Interface(Abstract Class)  |---> DS
+		+-----------------------------------------------------+
+					^
+					|
+		+-----------------------------------------------------+
+		|                IDispatch-Interface(Abstract Class)  |---> DS
+                +-----------------------------------------------------+
+					^
+					|
+		+-----------------------------------------------------+
+		|                CATBaseUnknown (Concrete Class)      |---> DS
+                +-----------------------------------------------------+
+					^
+					|
+		+-----------------------------------------------------+
+		|                TSTIPoint -Interface(Abstract Class) |
+                +-----------------------------------------------------+
+					^
+					|
+		+-----------------------------------------------------+
+		|        TIE_TSTIPoint -Tie Class/ Concrete Class     |
+                +-----------------------------------------------------+
+
+===================================================
+18 March 2019:
+
+Component Name:
+Regular component and Late Type component.
+
+Dictionary File.
+
+mkrtv or mkCreateRuntimeView
+
+CCook example
+
+feature modeler
+
+==========================================================
+19 march 2019
+
+CAA Extension
+ 
+1. What are the two kinds of components?
+	a. Regular Component / Normal Component
+	b. Late Type Component
+
+2. What is an extension?
+	a. An extension extends the functionality supported by a component.
+	b. An extension implements interfaces for a component.
+
+                                               Component C1
+                +---------------------------------------+
+                |                                       |
+Interface I1    |  +-------+   +---------------------+  |
+         O------|--| Tie   |---| Base Implementation |  |
+                |  | Class |   | Class               |  |
+                |  +-------+   +---------------------+  |
+                |                                       |
+                |                                       |
+Interface I2    |  +-------+   +---------------------+  |
+         O------|--| Tie   |---| Extension           |  |
+                |  | Class |   | Class               |  |
+                |  +-------+   +---------------------+  |
+                |                                       |
+                +---------------------------------------+
+
+3. Is extension implemented as a C++ class?
+	Yes.
+
+4. Is there a factory function created for creating C++ objects i.e. instances of extension class?
+	No.
+
+5. Where is the C++ object i.e. instance created for an extension class?
+	Inside the CATBaseUnknown::QueryInterface.
+
+6. What are the different kinds of extensions?
+	Extension can be of the following four kind:
+	a. Code Extension
+	b. Data Extension
+	c. Cache Extension
+	d. Transient Extension
+
+7. Can we have an extension to an extension?
+	No. We cannot create an extension to an extension.
+
+8. Can a component of 0 or more extensions?
+	Yes. A component can have 0 or more extensions.
+
+9. When should you create a Code extension?
+	When your extension class does not any data members, the recommended extension to create is Code extension.
+
+10. When should you create a Data extension?
+	When your extension class has data members, the recommended extension is to create is Data extension.
+
+-----------------------------------------------------
+Assignment:
+
+no factory needed.
+interface name TSTIDisplay
+create a extension class for implementing TSTIDisplay 
+write display method in interface and implement it in extension class
+update dico file..build mkmk
+refresh runtimeview
+in Imakefile of client add inetrface module name
+
+==========================================
+20 March 2019:|
+===============
+Command Class ppt
+
+===========================================
+22 March 2019:|
+===============
+What Is a CAA Command?
+A CAA command is an instance of a class deriving from the CATCommand class .
+
+CAA Command Typology?
+Commands seen by the end user as commands and referred to as dialog commands.
+
+One-shot commands that are run with no possible additional choice from the end user. 
+The class of a one-shot command should directly derive from the CATCommand class.
+
+Dialog boxes that enable the end user to enter parameter values or select options.
+
+State dialog commands : they are built as state machines,
+ to make up high level dialog commands with states and transitions between these states.
+ The class of a state dialog command should derive from the CATStateCommand class.
+
+The command tree structure is used to convey end user intents from
+ the object that detects the event up to the object that is able to process it. 
+This is devoted to the Send/Receive notification protocol.
+-----------------------------------------------------------------
+Command Running Mode and Command Focus and Lifecycle Management:
+
+Exclusive: 
+an exclusive command is known by the command selector. 
+It requests the command selector to clean the command stack before
+beginning to run and taking the focus, including the previous active command. 
+All commands present in the stack are canceled, that is called on their Cancel method.
+Use CATCommandModeExclusive to set a command as exclusive
+
+Shared: 
+a shared command is known by the command selector. 
+It coexists with other commands already present in the stack, 
+and requests the command selector to deactivate the active command before it takes the focus. 
+Use CATCommandModeShared to set a command as shared.
+
+Undefined: 
+an undefined command is unknown by the command selector. 
+It can run in parallel with the active command known by the command selector. 
+Use CATCommandModeUndefined to set a command as undefined. 
+Note that a state dialog command cannot be set as undefined.
+----------
+Command Mode:
+1]Exclusive mode
+2]Shared Mode
+
+In Shared mode, the command in the command stack will call desactivate on previous commands and 
+once it is executed the previous commands are resumed.
+
+In Exclusive mode, the command in command stack are cancelled cancel method is called on previous commands 
+and freshly command is started.
+
+-----------------------------------------------------------
+Activate can be used to create temporary objects that are needed from the beginning, 
+
+Desactivate is called when a shared command takes the focus from the active command. 
+The active command becomes inactive, is frozen in its current state and put in the command stack.
+When the shared command will complete, the frozen command will be reactivated 
+from its current state using the Activate method. 
+Desactivate should hide temporary objects created by Activate
+
+Cancel is called when the command completes if it is a state dialog command,
+or when an exclusive command takes the focus and requests the command to be deleted. 
+When the command completes, the focus is given to the default command (usually Select). 
+Cancel must delete or release temporary objects created by the command, 
+possibly after having removed them from the ISO.
+
+interactive objects=ISO
+
+command header holds the necessary information to load the command.
+
+when the user clicks on the menu item or on the icon that the command code is actually loaded. 
+
+A command header instance is always an instance of a class deriving from the CATCommandHeader class.
+-----------------------------------------------
+Life Cycle:
+
+Each editor, a CATFrmEditor class instance, keeps a list of command header instances.
+To be exact, the editor keeps a list of command header instances for each workshop it can manage. 
+
+Each list is filled at the CATCommandHeader class instantiation. 
+The new instance is inserted in the current list of the current editor.
+The CATFrmEditor class manages the destruction of the CATCommandHeader instances. 
+When a document is closed, 
+all its lists are deleted, 
+and their content is also deleted.
+
+--------------------------------------
+fct = Factory
+
+a.cpp -->cl.exe /P /EP a.cpp --->a.i
+
+*to generate intermediate file( .i) on mkmk :
+	in Imakefile.mk
+	OS=Windows_NT
+	LOCAL_CCFLAGS=/P /EP  -->for preprocessors to be compiled.
+
+CATCreateClass(TSTHelloCmd); ======>
+
+extern "C" __declspec(dllexport) void *fctCreateTSTHelloCmd(void *_pt_Arg) 
+{ 
+	return ((void *)new TSTHelloCmd()); 
+} 
+CATFillDictionary static_CreateTSTHelloCmd("TSTHelloCmd",(void *)fctCreateTSTHelloCmd);
+
+------------------------------------------
+
+Normally,
+command manager points to the command object .when command object is not needed it should be destroyed.
+technically, self destruction of the command will result to the memory leak thus this is to be done by
+command manager internally of the application.
+
+RequestDelayedDestruction()--->
+The method is called to  avoid self destrcution of the command informing the command manager to destroy
+it at particular time of point when it is not required.
+
+----------------------------------------
+
+Creating a Command Class:
+1] Create a command class and derived it from CATCommand or any other class which is derived from CATCommand.
+2] Implement methods:Constructor, Destructor, Activate, Desactivate, Cancel.
+3] for creating object of command class use macro. e.g-CATCreateClass(TSTHelloCmd) and 
+CATCreateClassArg(TSTHelloCmd). 
+4] Check the mode of command(Exclusive/Shared)
+5] Destroy the command with RequestDelayedDestruction().
+6] Dependency walker to check in the DLL.
+
+------------------------------------
+
+Process Enviroment variables:notebook
+Set Environment variable : sysdm.cpl in cmd.exe
+#include<iostream>
+using namespace std;
+#include<cstdlib>
+
+int main()
+{
+char *pValue;
+pValue=getenv("UNAME");
+if(pValue!=NULL)
+{
+cout<<"Welcome "<<pValue<<"!"<<endl;
+}
+return 0;
+}
+
+the program responds to the environment variables the OS has means that 
+the executable of the application should respond to the environment variables.
+
+------------------------------------------------------------------------------
+
+				Component TSTAddinLT
+			+------------------------------+
+	        	|                              |
+	                |  +------+     +------------+ |
+			|  |      |     |            | |
+			|  |  TIE |     |  Extension | |
+			|  |      |     |            | |
+ 			|  +------+     +------------+ |
+CATIPrtCfgAddin	        |			       |
+             o----------|                              |
+                        |                              |
+                        +------------------------------+
+Create Command Class
+Create Addin
+	Create Extension class
+1] update dictionary file
+2]Create Command Headers
+
+In CAA,MacDeclareHeader
+
+TSTHelloCmdHdr-->name of command header class
+#include"CATCommandHeader.h"
+MacDeclareHeader(TSTHelloCmdHdr);
+
+
+Framework:ApplicationFrame
+In IdentityCard.h--->AddPrereqComponent("ApplicationFrame",Public);
+
+in Imakefile.mk--->LINK_WITH=..... CATApplicationFrame
+
+==================================
+25 march 2019:
+
+It we want to see the preprocessed output from the C++ Compiler, that is .i file
+the we pass /P /EP command to the compiler.
+
+In CAA, we make change in Imakefile.mk 
+OS=Windows_NT
+LOCAL_CCFLAGS=/P /EP
+
+i.e-if we want to see C++ Macro Expansion then we should use this to study.
+
+WARNING:
+1] When the compiler generates .i file it does not generate .obj file. 
+i.e-only preprocessor gets executed when we give /P /EP option.
+
+so we will get linking error this is perfectly ok.
+
+In Case, we want to generate .obj then we should remove or comment out the line related to 
+LOCAL_CCFLAGS=/P /EP
+-------------------------
+create command class: TSTHelloCmd
+create Addin 
+	by creating component extension.
+
+In createCommands, create CommandHeader object.
+
+name of our command header class: TSTHelloCmdHdr
+where we have created the header class? MacDeclareHeader
+
+Where we create Command Header objects ? in CreateCommands().
+---------------------------
+In CreateToolbars() --->
+1] Create the toolbar using NewAccess
+
+2] Create the command starter using NewAccess
+
+3] To the Toolbar, add the comand starter as child use SetAccessChild
+
+4] To the command Starter, connect the command header object
+   Use SetAccessCommand.
+
+5] Use the AddToolbarView macro to add the toolbar to the view and show it.
+   AddToolbarView(pToolbar,...)
+
+6] from the CreateToolbars function, return the pointer to toobar object
+i.e- pToolbar, which is of type CATCmdContainer *
+
+-----------------------------
+Locate CNext.exe file in C:\Program Files\Dassault Systemes\B28\win_b64\code\bin
+
+copy CNext.exe in runtimeview of TSTAddinWS
+C:\TSTAddinWS\win_b64\code\bin
+
+------------------------------
+In Visual Studio,
+Goto Tools -->3DS Enviroment,
+CNEXTOUTPUT=console
+
+Environment Variable name=CNEXTOUTPUT
+
+Environment Variable value=console
+-------------------------------
+26 March 2019:(MyNotes)
+
+ pNameLabel = new CATDlgLabel(this, "Name :");
+ pOk = new CATDlgPushButton(this, "Ok");
+  
+ pOk->SetGridConstraints(2,0,1,1,CATGRID_CENTER );
+ 
+
+
+
+TSTDlgWindow.h............
+class TSTDlgWindow : public CATDialog
+{
+DeclareResource(TSTDlgWindow, CATDialog);
+public:
+public TSTDlgWindow(CATInteractiveApplication* iParent,
+		    const CATString& iObjectName,
+		    CATDlgStyle iStyle=NULL);
+virtual TSTDlgWindow();
+void Build();
+
+private:
+ CATDlgEditor          * _pTextEdit;
+};
+
+..........................
+SetGridConstraints ===>For Alignation of constraints in the Dialog window.
+
+DeclareResource(thisclass,baseclass); ==>Associates resource and message catalogs to the dialog object.
+
+-------------------------------------
+
+TSTDialogWindow.h....
+#ifndef _TSTDIALOGWINDOWH
+#define _TSTDIALOGWINDOWH
+
+#include <iostream>
+using namespace std;
+
+#include "CATDlgWindow.h" 
+class CATInteractiveApplication; //Forward Declaration
+
+class TSTDialogWindow: public CATDlgWindow
+{
+DeclareResource(TSTDialogWindow,CATDlgWindow); 
+TSTDialogWindow(CATInteractiveApplication*,
+		CATString&,
+		CATDlgStyle);
+virtual ~TSTDialogWindow();
+void Build();
+private:
+CATInteractiveApplication * _pApplication;
+....!
+
+};
+#endif //_TSTDIALOGWINDOWH
+
+-------------------------------------
+TSTDialogWindow.cpp....
+#include "TSTDialogWindow.h"
+
+#include "CATDlgLabel.h"
+#include "CATDlgEditor.h"
+#include "CATDlgPushButton.h"
+
+
+TSTDialogWindow::TSTDialogWindow(CATInteractiveApplication*,
+		CATString&,
+		CATDlgStyle);
+
+========================================
+27 March 2019: |
+---------------+
+
+State Chart Command:
+Finite State Machine(FSM)
+
+========================================
+29 March 2019:
+
+CAA Topics:
+    -- Deprecated API
+    - Smart Pointer Usage, NULL_var
+    - Publish Subscribe Mechnism
+    - Difference between Standard Tie and Chain Tie
+    - CATAssert
+    - CATfctEditorAssistant.exe
+    - CAA Coding Guidelines
+    - CAA Static Code Analyser
+    -- CAA Object Browser
+    -- CAA Keyboard Shortcuts
+    - Send Recieve Communication Protocol
+    - CATListP, CATListV
+    - Searching for API Usage i Educational Frameworks
+    - CATStart.exe
+------------------------------
+Keyboard Shortcuts:
+
+Ctrl + T ===>This will select the word and open the corresponding header file.
+
+Ctrl + Q ===>This will swap between .h file and .cpp file
+
+Ctrl + Shift + H ===>This will include the corressponding Header file based on the word selected.
+
+-------------------------------
+
+How to assign Keyboard shortcuts?
+Goto Tools -> Options -> 3DS -> General -> Assign Shortcuts
+
+-------------------------------
+For Shortcuts:
+
+CAAEncyclopedia -> Tools -> CID -> Quick References ->Shortcuts
+------------------------------
+Object Browser:
+Help -> 3DS Object Browser
+
+To see the contents of .dico file in tabular format.
+
+-----------------------------
+What is a Deprecated API?
+The API which no longer used by Dassault systemes and has removed i.e-no longer available .
+
+What is API?
+Application Programming Interface
+It conatins Classes,macros,typedefs,functions,etc.
+
+Where can we Find Deprecated APIs?
+In CAAEncyclopedia, C++ API -> Indexes -> Deprecated Index 
+-----------------------------
+"C:\Program Files\Dassault Systemes\B28\win_b64\code\bin\CATSTART.exe"  
+	-run "CNEXT.exe" 
+	-env CATIA_P3.V5-6R2018.B28 
+	-direnv "C:\ProgramData\DassaultSystemes\CATEnv" 
+	-nowindow 
+------------------------------
+What are the 2 Categories of Environment?
+Global Environment -> In Global Environment Directory
+User Environment -> In User Environment Directory
+
+"C:\Program Files\Dassault Systemes\B28\win_b64\code\bin\CATIAENV.exe"  
+	-env CATIA_P3.V5-6R2018.B28 
+	-direnv "C:\ProgramData\DassaultSystemes\CATEnv" 
+
+  CSIDL_LOCAL_APPDATA\DassaultSystemes\CATTemp
+-------------------------------
+C:\TSTOsmWS\TSTOsmFW\CNext\resources\graphic
+	This is the directory where we create and keep the catalog(.CATfct) files.
+
+CATfctEditorAssistant.exe
+
+CATfctEditorAssistant.exe 2> CATfct-Help.txt
+---------------------------------
+What is the location of .CATfct files?
+1] In Build time view : 
+	<Workspace>
+	    <Framework>
+		CNext
+		   resources
+		      graphic
+
+
+2]In Runtime View : 
+	<Workspace>
+	    win_b64
+	       resources
+		  graphic
+
+What is CATGraphicPath?
+It is an Environment variable.
+This is usually set using CATIA Environment file.
+Environment file is created file is created using Environment Editor.
+
+It is usually set to the runtime-view like 
+	<Workspace>
+	    win_b64
+	       resources
+		  graphic
+
+Is CD is an Environment variable on windows?
+Yes.
+It refers to the current working directory.
+
+How to see the value of CD Environment variable?
+echo %CD%
+
+How to see the values of CATGraphicPath Environment variable?
+echo %CATGraphicPath%
+-----------------------------
+Creating the Catalog :
+  
+		    +-----------------------+
+                    |                       |     New
+	            | CATfctEditorAssistant |---> TSTGeom.CATfct
+		    |                       |
+		    |   (update catalog)    |---> TSTGeom.osm
+                    +-----------------------+
+
+Updating the Catalog :
+  
+	Original	    +-----------------------+
+         TSTGeom.CATfct  -->|  CATfctEditorAssistant|     New
+			    |                       |---> TSTGeom.CATfct
+	 Modified	    |   (update catalog)    |
+             TSTGeom.osm -->+-----------------------+
+-------------------------
+Updating CATGraphicPath
+
+set CATGraphicPath=%CD%;%CATGraphicPath%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
